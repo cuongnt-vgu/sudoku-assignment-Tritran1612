@@ -1,5 +1,6 @@
 #include "hidden_singles.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <stdio.h>
 #include <assert.h>
 #include<stdlib.h>
@@ -97,3 +98,6 @@ int hidden_singles(SudokuBoard *p_board)
     return 0;
 }
 >>>>>>> 13249bc (added tests)
+=======
+
+>>>>>>> 8b19c97 (added description)

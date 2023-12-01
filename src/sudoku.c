@@ -247,10 +247,19 @@ int main(int argc, char **argv)
     int solved_counter = board->solved_counter;
     while (board->solved_counter < BOARD_SIZE * BOARD_SIZE)
     {
+<<<<<<< HEAD
         while (show_possible(board, p_solved_cells, solved_counter))
         {
             solved_counter = check_solved_cells(board, &p_solved_cells);
             printf("check_solved_cells %d\n", solved_counter);
+=======
+        solved_counter = check_solved_cells(board, &p_solved_cells);
+        // printf("check_solved_cells %d\n", solved_counter);
+        if (show_possible(board, p_solved_cells, solved_counter))
+        {
+            // printf("show_possible -> Yes\n");
+            continue;
+>>>>>>> 8b19c97 (added description)
         }
         // solved_counter = hidden_singles(board, &p_solved_cells);
         // printf("hidden_singles %d\n", solved_counter);

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/B-8axr9_)
+=======
+>>>>>>> 8b19c97 (added description)
 ## Sudoku assignment
 
 Build sudoku solver using C programming language.
@@ -12,6 +15,7 @@ Build sudoku solver using C programming language.
 
 ## Tasks
 
+<<<<<<< HEAD
 Students need to implements the following three algorithms. There are some functions you may need to use such as:
 
 ```
@@ -20,11 +24,15 @@ void unset_candidate(Cell *cell, int value);
 void set_candidates(Cell *cell, int *candidates, int size);
 int *get_candidates(Cell *cell);
 ```
+=======
+Students need to implements the following three algorithms:
+>>>>>>> 8b19c97 (added description)
 
 ### Hidden singles
 
 - Read: [Hidden singles](https://www.sudokuwiki.org/Getting_Started) 
 
+<<<<<<< HEAD
 - Hint: You try use the [sudoku solver](https://www.sudokuwiki.org/sudoku.htm), pick the example "Gentle" and run step by step. When hidden singles are detected, the message shows the explanation for hidden singles.
 
 ![Hidden singles detected](hidden_singles.png)
@@ -44,6 +52,8 @@ SINGLE: J9 set to 1, unique in Column
 ``` 
 
 
+=======
+>>>>>>> 8b19c97 (added description)
 ### Naked pair/triple
 
 - Read: [Naked pair/triple](https://www.sudokuwiki.org/Naked_Candidates) 
@@ -129,11 +139,20 @@ git remote add latest https://github.com/ntcuong2103/sudoku-assignment
 ```
 2. Pull the code
 ```
+<<<<<<< HEAD
 git config pull.rebase true
 git pull latest main
 ```
 3. Push to remote repository
 git push origin --force
+=======
+git pull --rebase latest main
+```
+3. Synchronize changes
+
+Use the button synchronize changes in the bottom left of vscode.
+![Sync button](sync.png)
+>>>>>>> 8b19c97 (added description)
 
 ## Compile, run, debug
 
@@ -172,12 +191,17 @@ Menu:
 File > Run > Add configuration...
 Add configuration... --> (gdb) Launch
 ```
+<<<<<<< HEAD
 Modify [launch.json](.vscode/launch.json)
+=======
+Modify `launch.conf`
+>>>>>>> 8b19c97 (added description)
 
 ```
             "program": "${workspaceFolder}/sudoku",
             "cwd": "${workspaceFolder}",
             "args": ["000105000140000670080002400063070010900000003010090520007200080026000035000409000"],
+<<<<<<< HEAD
 ```
 
 Press F5 for running debugger
@@ -217,3 +241,6 @@ make check-5
 ### Input and expected output
 
 The input string and expected output string represent the sudoku board with candidates. You can import it directly to the [sudoku solver](https://www.sudokuwiki.org/sudoku.htm) -> "Import a sudoku" to check the step.
+=======
+```
+>>>>>>> 8b19c97 (added description)
