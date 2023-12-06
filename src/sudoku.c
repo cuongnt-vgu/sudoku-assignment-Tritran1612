@@ -7,6 +7,7 @@
 #include "hidden_singles.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 void init_sudoku(SudokuBoard *p_board)
 {
@@ -226,6 +227,8 @@ void print_candidate_num(SudokuBoard *p_board)
 }
 
 >>>>>>> efe80b5 (added hidden single description)
+=======
+>>>>>>> 13249bc (added tests)
 int main(int argc, char **argv)
 {
     if (argc != 2)

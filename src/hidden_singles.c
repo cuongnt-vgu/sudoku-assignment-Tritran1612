@@ -1,4 +1,5 @@
 #include "hidden_singles.h"
+<<<<<<< HEAD
 #include <stdio.h>
 #include <assert.h>
 #include<stdlib.h>
@@ -89,3 +90,10 @@ HiddenSingle hidden_singles[BOARD_SIZE*BOARD_SIZE];
             return solved_counter ; 
 
         }
+=======
+
+int hidden_singles(SudokuBoard *p_board)
+{
+    return 0;
+}
+>>>>>>> 13249bc (added tests)
