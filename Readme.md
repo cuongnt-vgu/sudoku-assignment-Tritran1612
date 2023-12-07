@@ -33,6 +33,9 @@ Students need to implements the following three algorithms:
 - Read: [Hidden singles](https://www.sudokuwiki.org/Getting_Started) 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5f51e0f (updated readme)
 - Hint: You try use the [sudoku solver](https://www.sudokuwiki.org/sudoku.htm), pick the example "Gentle" and run step by step. When hidden singles are detected, the message shows the explanation for hidden singles.
 
 ![Hidden singles detected](hidden_singles.png)
@@ -52,8 +55,11 @@ SINGLE: J9 set to 1, unique in Column
 ``` 
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> 8b19c97 (added description)
+=======
+>>>>>>> 5f51e0f (updated readme)
 ### Naked pair/triple
 
 - Read: [Naked pair/triple](https://www.sudokuwiki.org/Naked_Candidates) 
@@ -140,6 +146,7 @@ git remote add latest https://github.com/ntcuong2103/sudoku-assignment
 2. Pull the code
 ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 git config pull.rebase true
 git pull latest main
 ```
@@ -147,6 +154,10 @@ git pull latest main
 git push origin --force
 =======
 git pull --rebase latest main
+=======
+git config pull.rebase true
+git pull latest main
+>>>>>>> 5f51e0f (updated readme)
 ```
 3. Synchronize changes
 
@@ -202,6 +213,7 @@ Modify `launch.conf`
             "cwd": "${workspaceFolder}",
             "args": ["000105000140000670080002400063070010900000003010090520007200080026000035000409000"],
 <<<<<<< HEAD
+<<<<<<< HEAD
 ```
 
 Press F5 for running debugger
@@ -223,6 +235,10 @@ Modify [launch.json](.vscode/launch.json)
 where there are three arguments (args) must be provided: board_input, method, and pipe. Pipe could be set to 0, board_input and method can be get from [traces.json](test/traces.json)
 
 
+=======
+```
+
+>>>>>>> 5f51e0f (updated readme)
 ### Run test cases
 
 - Run all the test cases
@@ -241,6 +257,9 @@ make check-5
 ### Input and expected output
 
 The input string and expected output string represent the sudoku board with candidates. You can import it directly to the [sudoku solver](https://www.sudokuwiki.org/sudoku.htm) -> "Import a sudoku" to check the step.
+<<<<<<< HEAD
 =======
 ```
 >>>>>>> 8b19c97 (added description)
+=======
+>>>>>>> 5f51e0f (updated readme)
