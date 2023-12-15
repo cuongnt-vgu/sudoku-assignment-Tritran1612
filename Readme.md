@@ -16,6 +16,9 @@ Build sudoku solver using C programming language.
 ## Tasks
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9018df2 (updated readme)
 Students need to implements the following three algorithms. There are some functions you may need to use such as:
 
 ```
@@ -24,9 +27,12 @@ void unset_candidate(Cell *cell, int value);
 void set_candidates(Cell *cell, int *candidates, int size);
 int *get_candidates(Cell *cell);
 ```
+<<<<<<< HEAD
 =======
 Students need to implements the following three algorithms:
 >>>>>>> 8b19c97 (added description)
+=======
+>>>>>>> 9018df2 (updated readme)
 
 ### Hidden singles
 
@@ -152,6 +158,7 @@ git pull latest main
 ```
 3. Push to remote repository
 git push origin --force
+<<<<<<< HEAD
 =======
 git pull --rebase latest main
 =======
@@ -164,6 +171,8 @@ git pull latest main
 Use the button synchronize changes in the bottom left of vscode.
 ![Sync button](sync.png)
 >>>>>>> 8b19c97 (added description)
+=======
+>>>>>>> 9018df2 (updated readme)
 
 ## Compile, run, debug
 
@@ -203,10 +212,14 @@ File > Run > Add configuration...
 Add configuration... --> (gdb) Launch
 ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 Modify [launch.json](.vscode/launch.json)
 =======
 Modify `launch.conf`
 >>>>>>> 8b19c97 (added description)
+=======
+Modify [launch.json](.vscode/launch.json)
+>>>>>>> 9018df2 (updated readme)
 
 ```
             "program": "${workspaceFolder}/sudoku",
@@ -235,10 +248,13 @@ Modify [launch.json](.vscode/launch.json)
 where there are three arguments (args) must be provided: board_input, method, and pipe. Pipe could be set to 0, board_input and method can be get from [traces.json](test/traces.json)
 
 
+<<<<<<< HEAD
 =======
 ```
 
 >>>>>>> 5f51e0f (updated readme)
+=======
+>>>>>>> 9018df2 (updated readme)
 ### Run test cases
 
 - Run all the test cases
