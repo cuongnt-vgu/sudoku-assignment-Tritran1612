@@ -17,3 +17,5 @@ void find_hidden_single(Cell **p_cells, HiddenSingle *p_hidden_singles,
 
 // find hidden single cells in a board, return the number of hidden single cells
 int hidden_singles(SudokuBoard *p_board);
+bool is_in_Hidden(HiddenSingle*p_hidden_single, int *size,Cell*p );
+bool is_candidate(Cell *cell, int value);
