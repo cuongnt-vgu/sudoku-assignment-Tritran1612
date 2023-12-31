@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 #include <assert.h>
 #include <locale.h>
 #include <stdio.h>
@@ -171,4 +169,3 @@ int main(int argc, char **argv)
     fclose(pipe);
     exit(EXIT_SUCCESS);
 }
->>>>>>> 13249bc (added tests)

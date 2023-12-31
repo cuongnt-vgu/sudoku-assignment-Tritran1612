@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include "hidden_pairs.h"
 #include <stdbool.h>
 #include <stdio.h>
@@ -73,20 +72,6 @@ void find_hidden_double(Cell **p_cells, HiddenPair *p_hidden_double,
 
 int hidden_pairs(SudokuBoard *p_board)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    return 0;
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> 13249bc (added tests)
-=======
-#include "hidden_pairs.h"
->>>>>>> 8b19c97 (added description)
-=======
-=======
->>>>>>> 96ce43a
     HiddenPair p_hidden_double[BOARD_SIZE*BOARD_SIZE];
     int p_counter = 0;
     for (int i = 0; i< BOARD_SIZE; i++){
@@ -112,9 +97,4 @@ int hidden_pairs(SudokuBoard *p_board)
     }
 
     return (p_counter - overlap)/2;
-<<<<<<< HEAD
 }
->>>>>>> 976cbf9 (test)
-=======
-}
->>>>>>> 96ce43a

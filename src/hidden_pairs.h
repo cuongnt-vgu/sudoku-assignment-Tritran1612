@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 #pragma once
 
 
@@ -17,4 +15,3 @@ int find_hidden_double_values(Cell **p_cells, int *hidden_double_values);
 void find_hidden_double(Cell **p_cells, HiddenPair *p_hidden_double,
                         int *p_counter);
 int hidden_pairs(SudokuBoard *p_board);
->>>>>>> 96ce43a

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import os
 import subprocess
 import re
@@ -160,4 +158,3 @@ def main():
 
 
 main()
->>>>>>> 13249bc (added tests)

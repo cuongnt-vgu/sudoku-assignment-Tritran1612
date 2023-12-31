@@ -1,11 +1,6 @@
 #include "sudoku.h"  
 #include "hidden_singles.h"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #include <stdbool.h>
->>>>>>> 976cbf9 (test)
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -66,48 +61,6 @@ void find_hidden_single(Cell **p_cells, HiddenSingle *p_hidden_singles, int *p_c
 }
 
 int hidden_singles(SudokuBoard *p_board) {
-<<<<<<< HEAD
-    
-//set candidates 
-int solved_counter= 0 ;
-HiddenSingle hidden_singles[BOARD_SIZE*BOARD_SIZE];
-
-    for(int i = 0 ; i< BOARD_SIZE;i++){
-            find_hidden_single(p_board->p_rows[i],hidden_singles,& solved_counter);
-         
-       }
-       for(int j = 0 ; j< BOARD_SIZE;j++){
-            find_hidden_single(p_board->p_cols[j],hidden_singles,&solved_counter);
-       }
-       for(int k = 0 ; k< BOARD_SIZE;k++){
-            find_hidden_single(p_board->p_boxes[k],hidden_singles,&solved_counter);
-       }
-       for(int  j = 0 ; j<solved_counter;j++){
-            HiddenSingle*current_hidden=&hidden_singles[j];
-        
-            int value=current_hidden->value;
-            set_candidates(current_hidden->p_cell, &value, 1);
-            
-            }
-            
-        //coppy hidden single to output array
-        for(int k = 0 ; k < solved_counter;k++){
-            p_board->solved_cells[solved_counter+k]=hidden_singles[k].p_cell;
-            }
-            return solved_counter ; 
-
-        }
-=======
-
-int hidden_singles(SudokuBoard *p_board)
-{
-    return 0;
-}
->>>>>>> 13249bc (added tests)
-=======
-
->>>>>>> 8b19c97 (added description)
-=======
     HiddenSingle hidden_singles[BOARD_SIZE * BOARD_SIZE];
     int counter = 0;
     HiddenSingle processed_cells[BOARD_SIZE * BOARD_SIZE];
@@ -132,4 +85,3 @@ int hidden_singles(SudokuBoard *p_board)
     }
     return counter;
 }
->>>>>>> 976cbf9 (test)
