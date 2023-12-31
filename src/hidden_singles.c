@@ -1,66 +1,72 @@
+#include "sudoku.h"  
 #include "hidden_singles.h"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#include <stdbool.h>
+>>>>>>> 976cbf9 (test)
 #include <stdio.h>
-#include <assert.h>
-#include<stdlib.h>
-#include"sudoku.h"
-#include<stdbool.h>
+#include <stdlib.h>
+#include <string.h>
 
-
-/* find hidden single values (the value that is unique among all the candidates for a row, a collumn, or a box) return the 
-numbers of hidden single values */
 int find_hidden_single_values(Cell **p_cells, int *hidden_single_values) {
-    int count = 0;
-    int occurence=0 ; //count the number of apperances of these numbers in cells column and boxs
-    // check all number from 1 to 9 whether hidden single values
-    for (int pval = 1; pval <= BOARD_SIZE; pval++) {
-        occurence= 0 ;
-        // check each row
-        for(int i = 0 ; i< BOARD_SIZE;i++){
-            // check each number for each row whether is hidden single and whether cells have been solved 
-            if(is_candidate(p_cells[i],pval)&& p_cells[i]->num_candidates>1){
-                occurence++;
+    int num_candidates[BOARD_SIZE] = {0};
+    for (int i = 0; i < BOARD_SIZE; i++) {
+        if (p_cells[i]->num_candidates > 1) {
+            int *candidates = get_candidates(p_cells[i]);
+            for (int j = 0; j < p_cells[i]->num_candidates; j++) {
+                num_candidates[candidates[j] - 1]++;
             }
-        }  
-        //occurence is one -> this is a hidden single
-        if(occurence==1){
-            hidden_single_values[count]=pval;
-            count++;
-       }
-     
+            free(candidates);
+        }
+
     }
-     return count;
+    int counter = 0;
+    for (int i = 0; i < BOARD_SIZE; i++) {
+        if (num_candidates[i] == 1) {
+            hidden_single_values[counter++] = i + 1;
+        }
+
+    }
+
+    return counter;
 }
-bool is_in_Hidden(HiddenSingle*p_hidden_single, int *size,Cell*p ){
-    for(int i = 0 ; i<*size;i++){
-        if(p_hidden_single[i].p_cell==p){
+bool is_processed(Cell *cell, HiddenSingle *processed_cells,int processed_count) {
+    for (int i = 0; i < processed_count; ++i) {
+        if (processed_cells[i].p_cell == cell) {
             return true;
         }
+
     }
     return false;
 }
-// find hidden single cells in a row, in a collumn or in a box
-void find_hidden_single(Cell **p_cells, HiddenSingle *p_hidden_singles, int *p_counter) {
-    // TEMPORARY to hold hidden _single value
 
+void find_hidden_single(Cell **p_cells, HiddenSingle *p_hidden_singles, int *p_counter,HiddenSingle *processed_cells,int *processed_count) {
     int hidden_single_values[BOARD_SIZE];
-    int count = find_hidden_single_values(p_cells,hidden_single_values);
-    for(int i=0 ;i< count ;i++){
-            int pval=hidden_single_values[i];
-            for(int j = 0 ; j< BOARD_SIZE; j++){
-                
-            if (is_candidate(p_cells[j],pval)&&p_cells[j]->num_candidates>1 && is_in_Hidden(p_hidden_singles,p_counter,p_cells[j])==false){
-                p_hidden_singles[*p_counter].value=pval;
-                p_hidden_singles[*p_counter].p_cell=p_cells[j];
-                (*p_counter)++;
+    int num_hidden_single_values = find_hidden_single_values(p_cells, hidden_single_values);
+    for (int i = 0; i < BOARD_SIZE; i++) {
+        if (p_cells[i]->num_candidates > 1 && !is_processed(p_cells[i], processed_cells, *processed_count)) {
+            int *candidates = get_candidates(p_cells[i]);  
+            for (int j = 0; j < num_hidden_single_values; j++) {
+                if (is_candidate(p_cells[i], hidden_single_values[j])) {
+                    p_hidden_singles[*p_counter].p_cell = p_cells[i];
+                    p_hidden_singles[*p_counter].value = hidden_single_values[j];
+                    (*p_counter)++;
+                    processed_cells[*processed_count].p_cell = p_cells[i];
+                    processed_cells[*processed_count].value = hidden_single_values[j];
+                    (*processed_count)++;
+
+                    break;
+                }
             }
-                
+            free(candidates);
         }
-    }
-    }
+}
+}
 
 int hidden_singles(SudokuBoard *p_board) {
+<<<<<<< HEAD
     
 //set candidates 
 int solved_counter= 0 ;
@@ -101,3 +107,29 @@ int hidden_singles(SudokuBoard *p_board)
 =======
 
 >>>>>>> 8b19c97 (added description)
+=======
+    HiddenSingle hidden_singles[BOARD_SIZE * BOARD_SIZE];
+    int counter = 0;
+    HiddenSingle processed_cells[BOARD_SIZE * BOARD_SIZE];
+    int processed_count = 0;
+    for (int i = 0; i < BOARD_SIZE; i++) 
+    {
+        find_hidden_single(p_board->p_rows[i], hidden_singles, &counter, processed_cells, &processed_count);
+    }
+    for (int i = 0; i < BOARD_SIZE; i++) 
+    {
+        find_hidden_single(p_board->p_cols[i], hidden_singles, &counter, processed_cells, &processed_count);
+    }
+    for (int i = 0; i < BOARD_SIZE; i++)
+     {
+        find_hidden_single(p_board->p_boxes[i], hidden_singles, &counter, processed_cells, &processed_count);
+    }
+    for (int i = 0; i < counter; i++) 
+    {
+        Cell *cell = hidden_singles[i].p_cell;
+        int value = hidden_singles[i].value;
+        set_candidates(cell, &value, 1);
+    }
+    return counter;
+}
+>>>>>>> 976cbf9 (test)
